@@ -112,11 +112,11 @@ testDataLoader = DataLoader(dataset= testData,batch_size=100,shuffle=True)
 network = Model()
 network = network.cuda()
 
-EPOCHS = 1
+EPOCHS = 120
 images = None
-optimizer = optim.Adam(network.parameters(),lr = 0.01)
+optimizer = optim.Adam(network.parameters(),lr = 0.00005)
 
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience= 4,factor=0.001, verbose=True)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience= 2, verbose=True)
 
 
 lossList = []
@@ -124,12 +124,12 @@ lossList = []
 for epoch in range(EPOCHS):
     print(f"EPOCH: {epoch+1}/{EPOCHS} \n")
     lossPerEpoch = None
-    avgLoss = np.empty(1)
+    avgLoss = None
     for images,labels in dataLoader:
-        test_img = images[0].squeeze(dim=0).detach().cpu()
-        plt.imshow(test_img,cmap="gray")
-        print(labels[0])
-        plt.show()
+        #test_img = images[0].squeeze(dim=0).detach().cpu()
+        #plt.imshow(test_img,cmap="gray")
+        #print(labels[0])
+        #plt.show()
         #print(images.dtype,labels.dtype)
         images = images.type(torch.float)
         #print("\nLables:",labels)
@@ -139,15 +139,18 @@ for epoch in range(EPOCHS):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+        if avgLoss == None:
+            avgLoss = loss
+        avgLoss = (avgLoss+loss)/2
         lossPerEpoch = loss
-        avgLoss = np.append(avgLoss,loss.detach().cpu())
-
+    print(avgLoss)
     totalAvgLoss = avgLoss.mean()
-    lossList.append(totalAvgLoss)
+    lossList.append(avgLoss)
     scheduler.step(totalAvgLoss)
-    print(f"Loss after epoch: {epoch+1}",lossPerEpoch,f"Average loss: {totalAvgLoss}")
+    print(f"Loss after epoch: {epoch+1}",lossPerEpoch,f"Average loss: {avgLoss}")
 
 plt.plot(lossList)
+plt.yscale("log")
 plt.show()
 
 network.eval()
