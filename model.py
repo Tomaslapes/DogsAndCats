@@ -11,12 +11,14 @@ PROCESSDATA = False
 class Model(nn.Module):
     def __init__(self):
         super(Model,self).__init__()
-        self.conv1 = nn.Conv2d(in_channels = 1, out_channels = 8, kernel_size = 5)
-        self.conv2 = nn.Conv2d(in_channels = 8, out_channels =20, kernel_size=5)
+        self.conv1 = nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size = 9)
+        self.conv2 = nn.Conv2d(in_channels = 32, out_channels =64, kernel_size=5)
+        self.conv3 = nn.Conv2d(in_channels = 64, out_channels =128, kernel_size=5)
 
-        self.fc1 = nn.Linear(20*13*13,140)
-        self.fc2 = nn.Linear(140,280)
-        self.out = nn.Linear(280,2)
+        self.fc1 = nn.Linear(128*8*8,256)
+        self.fc2 = nn.Linear(256,512)
+        self.fc3 = nn.Linear(512,256)
+        self.out = nn.Linear(256,2)
 
     def forward(self, t):
         t = self.conv1(t)
@@ -27,11 +29,17 @@ class Model(nn.Module):
         t = F.relu(t)
         t= F.max_pool2d(t,kernel_size = 2, stride = 2)
 
-        t = t.reshape(-1, 20*13*13)
+        t = self.conv3(t)
+        t = F.relu(t)
+
+        t = t.reshape(-1, 128*8*8)
         t = self.fc1(t)
         t = F.relu(t)
 
         t = self.fc2(t)
+        t = F.relu(t)
+
+        t = self.fc3(t)
         t = F.relu(t)
 
         t = self.out(t)
