@@ -112,11 +112,11 @@ testDataLoader = DataLoader(dataset= testData,batch_size=100,shuffle=True)
 network = Model()
 network = network.cuda()
 
-EPOCHS = 100
+EPOCHS = 60
 images = None
-optimizer = optim.Adam(network.parameters(),lr = 0.0006)
+optimizer = optim.Adam(network.parameters(),lr = 0.00055)
 
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience= 2, verbose=True)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience= 3, verbose=True)
 
 
 lossList = []
