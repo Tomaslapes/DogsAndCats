@@ -19,11 +19,16 @@ while True:
     print("Diff: ",pred[0][0]-pred[0][1])
     pred = torch.argmax(pred,dim = 1)
     #print(type(pred))
-    
+    printType = ""
     if pred == 1:
         print("CAT")
+        printType = "Cat"
     else:
         print("DOG")
+        printType = "Dog"
+
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(img, printType, (250, 100), font, 2, (255, 255, 255), 3, cv2.LINE_AA)
     
     cv2.imshow("frame",img)
     

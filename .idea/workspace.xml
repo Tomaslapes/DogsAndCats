@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7439142b-d018-4abb-b3dd-a0cb78028d67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CatAndDog.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Graphs/Ver2.1/1- 75 Epochs LR - 00005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cameraTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphs/stats.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs/stats.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loop.py" beforeDir="false" afterPath="$PROJECT_DIR$/loop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameraTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameraTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +33,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="D:/Documents/Programovani/,Python/Snake" />
   </component>
   <component name="RunManager" selected="Python.cameraTest">
     <configuration name="cameraTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -151,25 +146,29 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1893" height="273" key="GridCell.Tab.0.bottom" timestamp="1605689022023">
+    <state x="690" y="201" key="FileChooserDialogImpl" timestamp="1605806803640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605689022023" />
+    <state x="690" y="201" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605806803640" />
+    <state width="1893" height="273" key="GridCell.Tab.0.bottom" timestamp="1605718619186">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1893" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605718619186" />
     <state width="1893" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605557023208" />
-    <state width="1893" height="273" key="GridCell.Tab.0.center" timestamp="1605689022022">
+    <state width="1893" height="273" key="GridCell.Tab.0.center" timestamp="1605718619186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605689022022" />
+    <state width="1893" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605718619186" />
     <state width="1893" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605557023207" />
-    <state width="1893" height="273" key="GridCell.Tab.0.left" timestamp="1605689022022">
+    <state width="1893" height="273" key="GridCell.Tab.0.left" timestamp="1605718619186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605689022022" />
+    <state width="1893" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605718619186" />
     <state width="1893" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605557023207" />
-    <state width="1893" height="273" key="GridCell.Tab.0.right" timestamp="1605689022022">
+    <state width="1893" height="273" key="GridCell.Tab.0.right" timestamp="1605718619186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605689022022" />
+    <state width="1893" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605718619186" />
     <state width="1893" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605557023207" />
     <state width="1893" height="333" key="GridCell.Tab.1.bottom" timestamp="1605304595076">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -187,10 +186,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1893" height="333" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605304595076" />
-    <state x="591" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1605525252678">
+    <state x="591" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1605806744012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="591" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605525252678" />
+    <state x="591" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605806744012" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
