@@ -112,14 +112,15 @@ testDataLoader = DataLoader(dataset= testData,batch_size=100,shuffle=True)
 network = Model()
 network = network.cuda()
 
-EPOCHS = 120
+EPOCHS = 100
 images = None
-optimizer = optim.Adam(network.parameters(),lr = 0.00005)
+optimizer = optim.Adam(network.parameters(),lr = 0.00035)
 
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience= 2, verbose=True)
 
 
 lossList = []
+bestRun = None
 
 for epoch in range(EPOCHS):
     print(f"EPOCH: {epoch+1}/{EPOCHS} \n")
@@ -141,6 +142,10 @@ for epoch in range(EPOCHS):
         optimizer.step()
         if avgLoss == None:
             avgLoss = loss
+        if bestRun is None:
+            bestRun = network.state_dict()
+        if avgLoss > loss:
+            bestRun = network.state_dict()
         avgLoss = (avgLoss+loss)/2
         lossPerEpoch = loss
     print(avgLoss)
@@ -152,6 +157,8 @@ for epoch in range(EPOCHS):
 plt.plot(lossList)
 plt.yscale("log")
 plt.show()
+
+network.load_state_dict(bestRun)
 
 network.eval()
 
@@ -166,4 +173,14 @@ for img,label in testDataLoader:
         if label[i] == pred:
             correctPredicitons +=1
 
+
 print(f"Correct predicions: {correctPredicitons} out of {len(test_labels)} -> {correctPredicitons/len(test_labels)*100}%")
+
+shoudlSave = input("Save the model? Y/n")
+
+if shoudlSave=="y":
+    print("save Model")
+    torch.save(network.cpu(),"CatAndDog.pth")
+else:
+    print("Cancel")
+
