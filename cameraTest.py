@@ -3,6 +3,7 @@ import torch
 
 cap = cv2.VideoCapture(0)
 
+
 network = torch.load("CatAndDog.pth")
 network.eval()
 
