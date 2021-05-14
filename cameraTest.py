@@ -11,7 +11,7 @@ while True:
     ret,frame = cap.read()
     
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    img2 = cv2.resize(gray,(128,128))
+    img2 = cv2.resize(gray,(256,256))
     gray = cv2.resize(gray,(64,64))
     img = cv2.resize(img2,(720,480))
     gray = torch.from_numpy(gray).unsqueeze(dim = 0).unsqueeze(dim = 0)

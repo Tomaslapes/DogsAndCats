@@ -15,7 +15,7 @@ class Model(nn.Module):
         self.conv2 = nn.Conv2d(in_channels = 32, out_channels =64, kernel_size=5)
         self.conv3 = nn.Conv2d(in_channels = 64, out_channels =128, kernel_size=5)
 
-        self.fc1 = nn.Linear(128*8*8,1024)
+        self.fc1 = nn.Linear(128*8*8,1024)# 128*28*28
         self.fc2 = nn.Linear(1024,512)
         self.fc3 = nn.Linear(512,256)
         self.out = nn.Linear(256,2)
@@ -31,8 +31,9 @@ class Model(nn.Module):
 
         t = self.conv3(t)
         t = F.relu(t)
+        #t = F.max_pool2d(t, kernel_size=2, stride=2)
 
-        t = t.reshape(-1, 128*8*8)
+        t = t.reshape(-1, 128*8*8) # 128*28*28
         t = self.fc1(t)
         t = F.relu(t)
 
